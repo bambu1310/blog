@@ -22,4 +22,4 @@ jobs:
           command: aws s3 cp source-cnx.zip s3://codedeploy-cnx/cnx.zip
       - deploy:
           name: Execute CodeDeploy
-          command: aws deploy create-deployment --application-name cnx_deploy --deployment-group-name cnx_deploy --deployment-config-name CodeDeployDefault.AllAtOnce --s3-location bucket=codedeploy-cnx,bundleType=zip,key=cnx.zip --region ap-southeast-1
+          command: aws deploy create-deployment --application-name cnx_deploy --deployment-group-name cnx_deploy_group --deployment-config-name CodeDeployDefault.AllAtOnce --s3-location bucket=codedeploy-cnx,bundleType=zip,key=cnx.zip --region ap-southeast-1
